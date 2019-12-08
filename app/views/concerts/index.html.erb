@@ -10,7 +10,7 @@
         <td><%= c.city %></td>
         <td><%= c.state %></td>
         <td><%= c.date %></td>
-        <td><%= link_to "New Experience", new_concert_experience_path(:concert_id)%>
+        <td><%= link_to "New Experience", new_concert_experience_path(c.id)%>
       </tr>
     <% end %>
   </tbody>
