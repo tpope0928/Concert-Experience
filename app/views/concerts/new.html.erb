@@ -1,0 +1,39 @@
+<h1>New Concert</h1>
+
+<%= form_for(@concerts) do |f|%>
+
+    <p> Select an Existing Artist </p>
+        <%= f.collection_select :artist_id, Artist.all, :id, :name, include_blank: 'Select One'%>
+
+    <p> Add a New Artist </p>
+        <%= f.fields_for :artist do |a| %>
+            <%= a.label :name %>
+            <%= a.text_field :name %>
+
+            <%= a.label :genre %>
+            <%= a.text_field :genre %>
+        <% end %>
+
+    <br>
+    <p>Concert Information </p>
+
+   
+
+    <%= f.label :venue %>
+    <%= f.text_field :venue %>
+
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+
+    <%= f.label :state %>
+    <%= f.text_field :state %>
+
+    <%= f.date_field :date, class: 'form-control' %>
+
+    <br>
+    <br>
+    
+    
+    <%= f.submit %>
+
+<% end %>

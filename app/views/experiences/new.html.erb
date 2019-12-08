@@ -1,0 +1,18 @@
+<h1> Add your Experience </h1>
+
+<%= form_for(@experience) do |f|%>
+    <div>
+        <%= f.label :rating %>
+        <%= f.number_field :rating, min:0, max:5 %>
+    </div>
+
+    <div>
+        <%= f.label :content %>
+        <%= f.text_area :content, size: "25x10" %>
+    </div>
+    <br>
+    <%= f.hidden_field :concert_id %>
+
+    <%= f.submit %>
+
+<% end %>
