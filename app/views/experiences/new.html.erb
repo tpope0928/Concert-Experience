@@ -1,6 +1,6 @@
 <h1> Add your Experience </h1>
 
-<%= form_for(@experience) do |f|%>
+<%= form_for ([@concert, @experience]) do |f|%>
     <div>
         <%= f.label :rating %>
         <%= f.number_field :rating, min:0, max:5 %>
@@ -11,7 +11,7 @@
         <%= f.text_area :content, size: "25x10" %>
     </div>
     <br>
-    <%= f.hidden_field :concert_id %>
+    <%#= f.hidden_field :concert_id, value: params[:concert_id] %>
 
     <%= f.submit %>
 
