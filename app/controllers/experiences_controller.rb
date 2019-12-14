@@ -19,6 +19,14 @@ class ExperiencesController < ApplicationController
       render :new
     end
   end
+
+  def index
+
+  end
+
+  def show
+
+  end
     
       private
     
