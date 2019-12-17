@@ -7,3 +7,7 @@ Your Experience for <%= @experience.concert.artist.name %> on <%= @experience.co
 <br>
 
 <%= @experience.content%>
+
+<br>
+
+<%= link_to "View all Experiences for This Concert", concert_experiences_path(@experience) %>
