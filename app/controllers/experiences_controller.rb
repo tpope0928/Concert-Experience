@@ -21,12 +21,12 @@ class ExperiencesController < ApplicationController
   end
 
   def index
-
-    if @concert = Concert.find_by_id(params[:concert_id])
-      @experiences = @concert.experiences
-    else
-      @experiences = Experience.all
-    end
+    @experiences = Experience.all
+   # if @concert = Concert.find_by_id(params[:concert_id])
+   #   @experiences = @concert.experiences
+   # else
+   #   @experiences = Experience.all
+   # end
   end
 
 
