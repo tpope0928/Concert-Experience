@@ -1,6 +1,8 @@
 <h1>All Experiences</h1>
 
-<%= @experiences.each do |e|%>
-    <%= e.rating%> - <%= e.content%>
+<ul>
+<% @experiences.each do |e|%>
+   <li> <%= e.rating%> - <%= e.content%></li>
 <% end %>
+</ul>
  
