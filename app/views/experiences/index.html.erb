@@ -1,1 +1,16 @@
-did it work?
+<% if @concert %>
+  <h1>Experiences for <%= @concert.artist%> at <%= @concert.venue%> on <%= @concert.date%></h1>
+<% else %>
+  <h1>All Experiences </h1>
+<% end %>
+
+<ul>
+<% @experiences.each do |experience| %>
+
+  <li>
+    <%= @experience.concert.content%>: <%= link_to @experience, experience_path(experience)%> - <%= @experience.rating%>
+  </li> <br>
+
+<% end %>
+</ul>
+ 
