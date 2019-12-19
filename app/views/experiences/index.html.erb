@@ -2,7 +2,7 @@
 
 <ul>
 <% @experiences.each do |e|%>
-   <li> <%= e.rating%> - <%= e.content%></li>
+   <li><%= e.user.username%> gave a rating of <%= e.rating%> and said <%= e.content%></li><br>
 <% end %>
 </ul>
  

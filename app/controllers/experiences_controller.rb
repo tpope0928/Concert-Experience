@@ -1,8 +1,7 @@
 class ExperiencesController < ApplicationController
   def new
     #if it's nested and why find the post
-    @concert = Concert.find_by_id(params[:concert_id])
-    if @concert
+    if @concert = Concert.find_by_id(params[:concert_id])
       @experience = @concert.experiences.build
     else
       @experience = Experience.new
@@ -21,12 +20,11 @@ class ExperiencesController < ApplicationController
   end
 
   def index
-    @experiences = Experience.all
-   # if @concert = Concert.find_by_id(params[:concert_id])
-   #   @experiences = @concert.experiences
-   # else
-   #   @experiences = Experience.all
-   # end
+    if @concert = Concert.find_by_id(params[:concert_id])
+      @experiences = @concert.experiences
+    else
+      @experiences = Experience.all
+    end
   end
 
 
