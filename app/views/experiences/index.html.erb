@@ -1,7 +1,7 @@
 <h1>All Experiences</h1>
 
 <ul>
-<% @experiences.each do |e|%>
+<% @experiences.map do |e|%>
    <li><%= e.user.username%> gave a rating of <%= e.rating%> and said <%= e.content%></li><br>
 <% end %>
 </ul>
