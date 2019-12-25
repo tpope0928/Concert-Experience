@@ -1,3 +1,5 @@
+<%= render partial: 'layouts/errors', locals:{object: @concerts} %>
+
 <h1>New Concert</h1>
 
 <%= form_for(@concerts) do |f|%>

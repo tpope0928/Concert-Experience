@@ -6,4 +6,9 @@ class Concert < ApplicationRecord
     has_many :users, through: :experiences
   
     accepts_nested_attributes_for :artist
+
+    validates :venue, presence: true
+    validates :city, presence: true
+    validates :state, presence: true
+    validates :date, presence: true
   end
