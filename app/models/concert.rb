@@ -12,25 +12,25 @@ class Concert < ApplicationRecord
     validates :state, presence: true
     validates :date, presence: true
     
-    validate :not_a_duplicate
+    #validate :not_a_duplicate
 
     def artist_attributes=(attributes)
       self.artist = Artist.find_or_create_by(attributes) if !attributes['name'].empty?
       self.artist
     end
 
-    def not_a_duplicate
-      concert = Concert.find_by(date: date, artist_id: artist_id)
-      if !!date && date != self
-        errors.add(:artist, 'Concert has been added for this date')
-      end
-    end
+    #def not_a_duplicate
+     # concert = Concert.find_by(date: date, artist_id: artist_id)
+      #if !!date && date != self
+       # errors.add(:artist, 'Concert has been added for this date')
+      #end
+    #end
 
-    def artist_name
-      artist.try(:name)
-    end
+    #def artist_name
+     # artist.try(:name)
+    #end
 
-    def date_and_artist
-      "#{date} - #{artist.try(:name)}"
-    end
+    #def date_and_artist
+     # "#{date} - #{artist.try(:name)}"
+    #end
   end
