@@ -34,5 +34,15 @@ class ConcertsController < ApplicationController
     def concert_params
         params.require(:concert).permit(:venue, :city, :state, :date, :artist_id, artist_attributes: [:name, :genre])
     end
+
+    def date
+    end
+
+
+    def duplicate_artist_prevention
+        if Concert.find_by(artist: artist, artist_id: artist_id)
+            errors.add(:date, "You have already added a Concert Experience for this Date")
+        end
+    end
     
 end
