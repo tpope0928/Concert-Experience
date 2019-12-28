@@ -1,6 +1,6 @@
-<%#= render partial: 'layouts/errors', locals:{object: @experience} %>
+<%= render partial: 'layouts/errors', locals:{object: @experience} %>
 
-<h1> Add your Experience for <%= @concert.artist.name %> on <%= @experience.concert.date %> at <%= @experience.concert.venue %></h1>
+<h1> Add your Experience <%#= @concert.artist.name %> <%#= @experience.concert.date %> <%#= @experience.concert.venue %></h1>
 
 <%= form_for ([@concert, @experience]) do |f|%>
     <div>
