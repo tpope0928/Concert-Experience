@@ -10,7 +10,7 @@ class Concert < ApplicationRecord
     validates :venue, presence: true
     validates :city, presence: true
     validates :state, presence: true
-    validates :date, presence: true
+    validates :date, presence: true, uniqueness: { scope: :date, message: "already taken" }
     
     #validate :not_a_duplicate
 
