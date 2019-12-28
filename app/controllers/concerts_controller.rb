@@ -39,10 +39,6 @@ class ConcertsController < ApplicationController
     end
 
 
-    def duplicate_artist_prevention
-        if Concert.find_by(artist: artist, artist_id: artist_id)
-            errors.add(:date, "Concert has been added for this Date")
-        end
-    end
+    
     
 end

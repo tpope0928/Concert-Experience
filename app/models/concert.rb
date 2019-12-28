@@ -22,7 +22,7 @@ class Concert < ApplicationRecord
     def not_a_duplicate
       concert = Concert.find_by(date: date, artist_id: artist_id)
       if !!date && date != self
-        errors.add(:artist, 'experience has been added for this date')
+        errors.add(:artist, 'Concert has been added for this date')
       end
     end
 
