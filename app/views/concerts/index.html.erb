@@ -13,7 +13,7 @@
         <td><%= c.state %></td>
         <td><%= c.date %></td>
         <td><%= link_to "New Experience", new_concert_experience_path(c.id)%>
-        <td><%= link_to "Your Experience", experience_path(c.id, @experiences) %>
+        <td><%= link_to "Your Experience", experience_path(c.id) %>
         <td><%#= link_to "Your Experience", concert_experience_path(c.id, @experiences) %>
         <td><%= link_to "Experiences", concert_experiences_path(c.id) %>
       </tr>

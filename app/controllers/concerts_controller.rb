@@ -1,7 +1,7 @@
 class ConcertsController < ApplicationController
 
     def index
-        @concerts = Concert.order_by_date
+        @concerts = Concert.all
        # if params[:user_id]
        #     @concert = User.find(params[:user_id]).concerts
         #    flash.now[:danger] = "You haven't added any concerts yet!" if @concerts.empty?

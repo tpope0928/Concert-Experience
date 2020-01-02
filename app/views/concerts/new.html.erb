@@ -5,7 +5,7 @@
 <%= form_for(@concerts) do |f|%>
 
     <p> Select an Existing Artist </p>
-        <%= f.label :concert_id, "Select a Concert" %>
+        <%#= f.label :artist_id, "Select a Artist" %>
         <%= f.collection_select :artist_id, Artist.all, :id, :name, include_blank: 'Select One'%>
 
     <p> Add a New Artist </p>
