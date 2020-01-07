@@ -10,4 +10,9 @@ class Experience < ApplicationRecord
     validates :concert, uniqueness: { scope: :user, message: "already has an experience" }
     
     scope :order_by_rating, -> {joins(:experiences).group(:id).order('avg(rating) desc')}
+
+    def self.concert_rating
+      order(rating: :desc)
+    end    
+  
   end

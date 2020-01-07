@@ -21,9 +21,9 @@ class ExperiencesController < ApplicationController
 
   def index
     if @concert = Concert.find_by_id(params[:concert_id])
-      @experiences = @concert.experiences
+      @experiences = @concert.experiences.concert_rating
     else
-      @experiences = Experience.all
+      @experiences = Experience.concert_rating
     end
   end
 

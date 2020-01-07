@@ -13,6 +13,11 @@ class Concert < ApplicationRecord
     validates :date, presence: true, uniqueness: { scope: :date, message: "already taken" }
     
     scope :order_by_date, -> {Concert.joins(:experiences).group(:id).order('(date) desc')}
+   
+   def self.concert_date
+      order(date: :desc)
+   end
+  
     #validate :not_a_duplicate
 
     def artist_attributes=(attributes)
