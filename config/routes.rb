@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/signup' => 'users#new'
   delete '/logout' => 'sessions#destroy'
+
+  get '/auth/:provider/callback' => 'sessions#omniauth'
   
   resources :concerts do
     resources :experiences, only: [:new, :index, :create, :show]
