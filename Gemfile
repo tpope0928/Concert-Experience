@@ -29,7 +29,7 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-spotify'
 gem 'rspotify'
 gem 'dotenv-rails'
-#gem 'rest-client', '~> 2.0'
+#gem 'rest-client', '~> 2.1'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
