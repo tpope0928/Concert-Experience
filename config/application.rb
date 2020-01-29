@@ -17,5 +17,5 @@ module ConcertExperience
     # the framework and any gems in your application.
   end
 
-  RSpotify::authenticate("<SPOTIFY_CLIENT_ID>", "<SPOTIFY_CLIENT_SECRET>")
+  #RSpotify::authenticate("<SPOTIFY_CLIENT_ID>", "<SPOTIFY_CLIENT_SECRET>")
 end

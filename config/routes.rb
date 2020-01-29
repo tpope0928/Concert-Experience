@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
   get '/auth/:provider/callback' => 'sessions#omniauth'
-  get '/auth/spotify/callback', to: 'users#spotify'
+  #get '/auth/spotify/callback', to: 'users#spotify'
   
   resources :concerts do
     resources :experiences, only: [:new, :index, :create, :show]
