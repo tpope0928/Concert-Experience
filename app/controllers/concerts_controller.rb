@@ -29,6 +29,17 @@ class ConcertsController < ApplicationController
         @concerts = Concert.find(params[:id])
     end
 
+    def edit
+        @concert = Concert.find(params[:id])
+    end
+
+    def update
+        @concert = Concert.find(params[:id])
+        @concert.update(venue: params[:concert][:venue], city: params[:concert][:city], state: params[:concert][:state], date: params[:concert][:date])
+        redirect_to concerts_path(@concerts)
+    end
+
+
     private
 
     def concert_params

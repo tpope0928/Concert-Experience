@@ -10,10 +10,10 @@ Rails.application.routes.draw do
   #get '/auth/spotify/callback', to: 'users#spotify'
   
   resources :concerts do
-    resources :experiences, only: [:new, :index, :create, :show]
+    resources :experiences, only: [:new, :index, :create, :show, :edit, :update]
   end
 
-  resources :experiences, only: [:index, :show, :new, :create]
+  resources :experiences, only: [:index, :show, :new, :create, :edit, :update]
   resources :artists
   
   resources :users do
