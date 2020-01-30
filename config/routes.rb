@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/signup' => 'users#new'
   delete '/logout' => 'sessions#destroy'
+  
+  #Route for Edit and Update
+  patch 'concerts/:id', to: 'concerts#update'
 
   get '/auth/:provider/callback' => 'sessions#omniauth'
   #get '/auth/spotify/callback', to: 'users#spotify'

@@ -35,7 +35,7 @@ class ConcertsController < ApplicationController
 
     def update
         @concert = Concert.find(params[:id])
-        @concert.update(venue: params[:concert][:venue], city: params[:concert][:city], state: params[:concert][:state], date: params[:concert][:date])
+        @concert.update(params.require(:concert).permit(:venue, :city, :state, :date, :artist_id, artist_attributes: [:name, :genre]))
         redirect_to concerts_path(@concerts)
     end
 
