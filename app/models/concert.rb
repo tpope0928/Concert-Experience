@@ -2,7 +2,7 @@ class Concert < ApplicationRecord
     belongs_to :artist
     belongs_to :user
   
-    has_many :experiences
+    has_many :experiences, dependent: :delete_all #deletes all associated experiences with the concert
     has_many :users, through: :experiences
   
     accepts_nested_attributes_for :artist

@@ -16,11 +16,11 @@
         <td><%#= link_to "Your Experience", experience_path(c.id) %>
         <td><%#= link_to "Your Experience", concert_experience_path(c.id, @experiences) %>
         <td><%= link_to "Experiences", concert_experiences_path(c.id) %>
+        <td><%= link_to "Delete this concert", concert_path(c.id), method: :delete, data: { confirm: "Are you sure you want to delete the concert?"}, class: "btn btn-xs btn-danger" %>
       </tr>
     <% end %>
   </tbody>
 </table>
- 
 <br>
  
 <%= link_to "New concert", new_concert_path %>

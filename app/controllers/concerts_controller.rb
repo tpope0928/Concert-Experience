@@ -39,6 +39,13 @@ class ConcertsController < ApplicationController
         redirect_to concerts_path(@concerts)
     end
 
+    def destroy
+        @concert = Concert.find(params[:id])
+        @concert.destroy
+        flash[:danger] = "Concert was successfully deleted"
+        redirect_to concerts_path(@concerts)
+      end
+
 
     private
 
