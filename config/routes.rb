@@ -13,14 +13,14 @@ Rails.application.routes.draw do
   #get '/auth/spotify/callback', to: 'users#spotify'
   
   resources :concerts do
-    resources :experiences, only: [:new, :index, :create, :show, :edit, :update]
+    resources :experiences
   end
 
-  resources :experiences, only: [:index, :show, :new, :create, :edit, :update]
+  resources :experiences
   resources :artists
   
   resources :users do
-    resources :concerts, only: [:index, :show, :new, :create]
+    resources :concerts
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
