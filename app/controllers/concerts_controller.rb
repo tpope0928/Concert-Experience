@@ -44,7 +44,7 @@ class ConcertsController < ApplicationController
         @concert.destroy
         flash[:danger] = "Concert was successfully deleted"
         redirect_to concerts_path(@concerts)
-      end
+    end
 
 
     private

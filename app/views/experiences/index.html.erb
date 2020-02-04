@@ -3,6 +3,11 @@
 <ul>
 <% @experiences.map do |e|%>
    <li><%= e.user.username%> gave a rating of <%= e.rating%> and said <%= e.content%></li><br>
+
+   <% if logged_in? && current_user %>
+          <td><%= link_to "Delete this experience", experience_path(e.id), method: :delete, data: { confirm: "Are you sure you want to delete the concert?"}, class: "btn btn-xs btn-danger" %>
+    <% end %>
+
 <% end %>
 </ul>
  

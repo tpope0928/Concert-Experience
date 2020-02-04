@@ -31,6 +31,13 @@ class ExperiencesController < ApplicationController
   def show
     @experience = Experience.find_by_id(params[:id])
   end
+
+  def destroy
+    @experience = Experience.find(params[:id])
+    @experience.destroy
+    flash[:danger] = "Experience was successfully deleted"
+    redirect_to experiences_path(@experiences)
+  end
     
       private
     
