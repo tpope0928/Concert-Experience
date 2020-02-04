@@ -11,7 +11,7 @@ class Concert < ApplicationRecord
     validates :city, presence: true
     validates :state, presence: true
     validates :date, presence: true, uniqueness: { scope: :date, message: "already taken" }
-    
+
     scope :order_by_date, -> {Concert.joins(:experiences).group(:id).order('(date) desc')}
    
    def self.concert_date

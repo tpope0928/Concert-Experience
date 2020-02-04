@@ -6,6 +6,7 @@ class Experience < ApplicationRecord
 
     validates :rating, presence: true
     validates :content, presence: true
+    
 
     validates :concert, uniqueness: { scope: :user, message: "already has an experience" }
     

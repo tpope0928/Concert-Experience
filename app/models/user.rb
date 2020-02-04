@@ -6,7 +6,9 @@ class User < ApplicationRecord
     
     has_many :experiences
     has_many :exp_concerts
+    has_many :concerts
 
+    has_many :artists, through: :concerts
     has_many :exp_concerts, through: :experiences, source: :concert
 
     def self.from_omniauth(auth)
