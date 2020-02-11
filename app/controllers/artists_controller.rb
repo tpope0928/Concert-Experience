@@ -1,14 +1,12 @@
 class ArtistsController < ApplicationController
-    before_action :redirect_if_not_logged_in
-
 
   def index
     @artists = Artist.all
   end
   
   def new
-    @concerts = Concert.new
-    @concerts.review.build
+    @artists = Artist.new
+    @artists.review.build
   end
 
   def create
@@ -23,7 +21,7 @@ class ArtistsController < ApplicationController
   end
 
   def show
-    @artists = Artist.find(params[:id])
+    @artist = Artist.find(params[:id])
   end
 
   def edit
@@ -38,7 +36,7 @@ class ArtistsController < ApplicationController
 
 private
 
-  def concert_params
+  def artist_params
     params.require(:artist).permit(:name, :genre, :website, :description, :artist_id)
   end
 
