@@ -1,4 +1,6 @@
 class ConcertsController < ApplicationController
+    before_action :set_ice_cream, only:[:show, :edit, :update]
+    before_action :redirect_if_not_logged_in
 
     def index
         @concerts = Concert.concert_date
@@ -56,7 +58,9 @@ class ConcertsController < ApplicationController
     def date
     end
 
+    def set_concert
+        @concert = Concert.find_by(params[:id])
+        redirect_to concerts_path if !@concert
+    end
 
-    
-    
 end

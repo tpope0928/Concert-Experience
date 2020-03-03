@@ -1,4 +1,7 @@
 class ExperiencesController < ApplicationController
+
+  before_action :redirect_if_not_logged_in
+
   def new
     #if it's nested and why find the post
     if @concert = Concert.find_by_id(params[:concert_id])
@@ -45,4 +48,4 @@ class ExperiencesController < ApplicationController
         params.require(:experience).permit(:content, :rating, :concert_id)
       end
 
-    end
+end
