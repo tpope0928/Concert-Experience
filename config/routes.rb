@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
   
   #Route for Edit and Update
+  post 'concerts/:id/edit', to: 'concerts#edit', as: :edit_concert
   patch 'concerts/:id', to: 'concerts#update'
 
   get '/auth/:provider/callback' => 'sessions#omniauth'

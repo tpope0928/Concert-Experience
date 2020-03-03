@@ -1,5 +1,5 @@
 class ConcertsController < ApplicationController
-    before_action :set_ice_cream, only:[:show, :edit, :update]
+    before_action :set_concert, only:[:show, :edit, :update]
     before_action :redirect_if_not_logged_in
 
     def index
