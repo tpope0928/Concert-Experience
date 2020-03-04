@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-    helper_method :current_user, :logged_in?
+  protect_from_forgery with: :exception
+  helper_method :current_user, :logged_in?
 
     private
     
@@ -12,7 +13,9 @@ class ApplicationController < ActionController::Base
       end
 
       def redirect_if_not_logged_in
-        redirect_to '/' if !logged_in?
+        if !logged_in?
+          flash[:danger] = "You must be logged in to perform that action"
+          redirect_to '/' if !logged_in?
+        end
       end
-
-  end
+end
