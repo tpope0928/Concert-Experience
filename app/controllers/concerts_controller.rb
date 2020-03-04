@@ -1,5 +1,6 @@
 class ConcertsController < ApplicationController
     before_action :set_concert, only:[:show, :edit, :update]
+    #before_action :authenticate_user!, :except => [:index]
     before_action :redirect_if_not_logged_in
 
     def index
@@ -32,7 +33,7 @@ class ConcertsController < ApplicationController
     end
 
     def edit
-        @concert = Concert.find(params[:id])
+        @concert = current_user.concerts.find(params[:id])
     end
 
     def update

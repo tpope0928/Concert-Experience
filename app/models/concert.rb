@@ -14,9 +14,9 @@ class Concert < ApplicationRecord
     #scope above date validation to user
     #scope :order_by_date, -> {Concert.joins(:experiences).group(:id).order('(date) desc')}
    
-   def self.concert_date
+    def self.concert_date
       order(date: :desc)
-   end
+    end
   
     #validate :not_a_duplicate
 
@@ -39,4 +39,4 @@ class Concert < ApplicationRecord
     #def date_and_artist
      # "#{date} - #{artist.try(:name)}"
     #end
-  end
+end
