@@ -4,11 +4,8 @@ class ExperiencesController < ApplicationController
 
   def new
     #if it's nested and why find the post
-    if @concert = Concert.find_by_id(params[:concert_id])
-      @experience = @concert.experiences.build
-    else
-      @experience = Experience.new
-    end
+    @concert = Concert.find_by_id(params[:concert_id])
+    @experience = Experience.new
   end
 
   def create
@@ -16,7 +13,7 @@ class ExperiencesController < ApplicationController
     @experience.concert_id = params[:concert_id]
     
     if @experience.save
-      redirect_to experience_path(@experience)
+      redirect_to concert_experiences_path(@experience)
     else
       render :new
     end

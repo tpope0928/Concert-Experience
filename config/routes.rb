@@ -16,8 +16,7 @@ Rails.application.routes.draw do
   resources :concerts do
     resources :experiences
   end
-
-  resources :experiences
+  #resources :experiences
   resources :artists
   
   resources :users do

@@ -2,7 +2,7 @@
 
 <h1> Add your Experience <%#= @concert.artist.name %> <%#= @experience.concert.date %> <%#= @experience.concert.venue %></h1>
 
-<%= form_for ([@concert, @experience]) do |f|%>
+<%= form_for(@experiences) do |f|%>
     <div>
         <%= f.label :rating %>
         <%= f.number_field :rating, min:0, max:5 %>
