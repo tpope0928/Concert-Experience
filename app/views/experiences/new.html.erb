@@ -2,7 +2,7 @@
 
 <h1> Add your Experience <%#= @concert.artist.name %> <%#= @experience.concert.date %> <%#= @experience.concert.venue %></h1>
 
-<%= form_for(@experiences) do |f|%>
+<%= form_for @experience, url: concert_experiences_path do |f|%>
     <div>
         <%= f.label :rating %>
         <%= f.number_field :rating, min:0, max:5 %>
@@ -13,7 +13,7 @@
         <%= f.text_area :content, size: "25x10" %>
     </div>
     <br>
-    <%#= f.hidden_field :concert_id, value: params[:concert_id] %>
+    <%= f.hidden_field :concert_id, value: params[:concert_id] %>
 
     <%= f.submit %>
 
