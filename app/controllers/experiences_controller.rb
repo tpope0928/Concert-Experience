@@ -36,7 +36,7 @@ class ExperiencesController < ApplicationController
     @experience = Experience.find(params[:id])
     @experience.destroy
     flash[:danger] = "Experience was successfully deleted"
-    redirect_to concert_experiences_path(@experience)
+    redirect_to concert_experiences_path(@experience.concert_id)
   end
     
       private
