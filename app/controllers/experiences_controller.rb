@@ -13,7 +13,7 @@ class ExperiencesController < ApplicationController
     @experience.concert_id = params[:concert_id]
     
     if @experience.save
-      redirect_to concert_experiences_path(@experience)
+      redirect_to concert_experiences_path(@experience.concert_id)
     else
       render :new
     end
