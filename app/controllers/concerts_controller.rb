@@ -33,7 +33,7 @@ class ConcertsController < ApplicationController
     end
 
     def edit
-        @concert = current_user.concerts.find(params[:id])
+        @concert = Concert.find(params[:id])
     end
 
     def update
