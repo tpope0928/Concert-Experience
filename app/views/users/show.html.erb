@@ -1,2 +1,25 @@
   
 Welcome <%= @user.username %>
+
+Here are your Concerts:
+
+<% @user.concerts.each do |c|%>
+    <tr>
+        <td><%= c.artist.name %></td>
+        <td><%= link_to "Artist Info", artist_path(c.id)%>
+        <td><%= c.venue %></td>
+        <td><%= c.city %></td>
+        <td><%= c.state %></td>
+        <td><%= c.date %></td>
+        <td><%= link_to "New Experience", new_concert_experience_path(c.id)%>
+        <td><%#= link_to "Your Experience", experience_path(c.id) %>
+        <td><%#= link_to "Your Experience", concert_experience_path(c.id, @experiences) %>
+        <td><%= link_to "Experiences", concert_experiences_path(c.id) %>
+
+        <% if c.user.id == current_user.id %>
+          <td><%= button_to "Edit concert", edit_concert_path(c.id), method: :edit %>
+          <td><%= button_to "Delete concert", concert_path(c.id), method: :delete, data: { confirm: "Are you sure you want to delete the concert?"}, class: "btn btn-xs btn-danger" %>
+        <% end %>
+
+    </tr>
+<% end %>
